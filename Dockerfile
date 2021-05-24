@@ -37,4 +37,4 @@ COPY entrypoint.sh /
 
 WORKDIR	${JMETER_HOME}
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD tail -f /dev/null

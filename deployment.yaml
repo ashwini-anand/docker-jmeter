@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmeter-deployment
+  labels:
+    app: jmeter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jmeter
+  template:
+    metadata:
+      labels:
+        app: jmeter
+    spec:
+      containers:
+      - name: jmeter
+        image: docker-sandbox.infra.cloudera.com/asanand/jmeter:5.4.t1
+        ports:
+        - containerPort: 80

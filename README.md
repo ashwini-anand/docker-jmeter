@@ -158,6 +158,11 @@ to the Docker container, see [run.sh](run.sh) script:
 sudo docker run --name ${NAME} -i -v ${WORK_DIR}:${WORK_DIR} -w ${WORK_DIR} ${IMAGE} $@
 ```
 
+## Steps to run in mow-priv
+Login into mow-priv from folder where deployment.yaml is present
+1. Create namespace `kubectl create namespace <namespace-name>`
+2. Create deployment `kubectl create -f deployment.yaml -n <namespace-name>`
+3. Get bash of pod `kubectl exec -it  <podName> -n <namespace-name> -- bash`
 ## Credits
 
 Thanks to https://github.com/hauptmedia/docker-jmeter
